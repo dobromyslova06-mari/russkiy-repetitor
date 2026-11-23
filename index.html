@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Мария Добромыслова — репетитор по русскому языку (онлайн и очно в Москве). Повышение успеваемости, подготовка к ВПР, контрольным и самостоятельным работам.">
+  <meta name="theme-color" content="#f8f6f1">
+  <title>Мария Добромыслова — репетитор по русскому языку</title>
+
+  <style>
+    :root {
+      --ink: #28283b;
+      --muted: #6e6d7d;
+      --paper: #f8f6f1;
+      --white: #fff;
+      --purple: #6c55cb;
+      --purple-dark: #5540b0;
+      --lavender: #eee9ff;
+      --peach: #f5c9ad;
+      --mint: #dcefe7;
+      --line: #e9e5df;
+      --shadow: 0 18px 50px rgba(49, 39, 88, 0.09);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    section {
+      scroll-margin-top: 88px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.12;
+    }
+
+    h1 {
+      max-width: 700px;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 6vw, 72px);
+    }
+
+    h1 span {
+      color: var(--purple);
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: clamp(34px, 4vw, 48px);
+    }
+
+    h3 {
+      margin-bottom: 11px;
+      font-size: 21px;
+      line-height: 1.2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 24px;
+      height: 2px;
+      background: var(--peach);
+      content: "";
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 23px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--purple);
+      color: var(--white);
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--purple-dark);
+    }
+
+    .button-light {
+      border-color: var(--line);
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .button-light:hover {
+      background: var(--lavender);
+      color: var(--purple-dark);
+    }
+
+    /* Шапка */
+    .header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(233, 229, 223, 0.85);
+      background: rgba(248, 246, 241, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      min-height: 74px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--purple);
+      color: var(--white);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover,
+    .footer a:hover {
+      color: var(--purple);
+    }
+
+    .nav .button {
+      min-height: 43px;
+      padding: 0 18px;
+      font-size: 14px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 21px;
+      cursor: pointer;
+    }
+
+    /* Первый экран */
+    .hero {
+      overflow: hidden;
+      padding: 74px 0 82px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      align-items: center;
+      gap: 42px;
+    }
+
+    .hero-copy .eyebrow {
+      margin-bottom: 23px;
+    }
+
+    .hero-text {
+      max-width: 570px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .note-check {
+      display: grid;
+      width: 27px;
+      height: 27px;
+      flex: 0 0 27px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--mint);
+      color: #39715d;
+      font-weight: 700;
+    }
+
+    .hero-art {
+      position: relative;
+      display: grid;
+      min-height: 430px;
+      place-items: center;
+    }
+
+    .art-circle {
+      position: absolute;
+      width: min(380px, 90%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--lavender);
+    }
+
+    .portrait {
+      position: relative;
+      display: grid;
+      width: 265px;
+      height: 325px;
+      align-content: end;
+      overflow: hidden;
+      padding: 24px;
+      border: 9px solid var(--white);
+      border-radius: 145px 145px 28px 28px;
+      background:
+        radial-gradient(circle at 50% 35%, #efc1a3 0 15%, transparent 15.5%),
+        radial-gradient(ellipse at 50% 83%, #6652bd 0 37%, transparent 37.5%),
+        linear-gradient(150deg, #f8dac4 0 48%, #d7cafa 48% 100%);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .portrait::before {
+      position: absolute;
+      top: 61px;
+      left: 50%;
+      width: 104px;
+      height: 85px;
+      border-radius: 55% 55% 42% 42%;
+      background: #46364a;
+      content: "";
+      transform: translateX(-50%);
+    }
+
+    .portrait::after {
+      position: absolute;
+      top: 86px;
+      left: 50%;
+      width: 81px;
+      height: 79px;
+      border-radius: 45% 45% 48% 48%;
+      background: #eab89a;
+      content: "";
+      transform: translateX(-50%);
+    }
+
+    .portrait-label {
+      position: relative;
+      z-index: 1;
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      font-weight: 700;
+    }
+
+    .portrait-label small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .floating-card {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 16px;
+      border: 1px solid rgba(233, 229, 223, 0.8);
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .floating-icon {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 11px;
+      background: #fff0e4;
+      font-size: 17px;
+    }
+
+    .floating-one {
+      top: 50px;
+      right: 0;
+    }
+
+    .floating-two {
+      bottom: 48px;
+      left: 0;
+    }
+
+    /* Секции */
+    .section {
+      padding: 84px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 17px;
+    }
+
+    .section-intro {
+      max-width: 630px;
+      margin-bottom: 38px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* Направления */
+    .programs {
+      background: var(--white);
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .program-card {
+      display: flex;
+      min-height: 260px;
+      flex-direction: column;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .program-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .program-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 24px;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--lavender);
+      font-size: 22px;
+    }
+
+    .program-card:nth-child(2) .program-icon {
+      background: #fff0e4;
+    }
+
+    .program-card:nth-child(3) .program-icon {
+      background: #e7f3ed;
+    }
+
+    .program-card p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card-link {
+      margin-top: auto;
+      color: var(--purple);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* Обо мне */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: center;
+      gap: 62px;
+    }
+
+    .about-visual {
+      display: grid;
+      min-height: 380px;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 32px;
+      background: var(--mint);
+    }
+
+    .book-stack {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      transform: rotate(-8deg);
+    }
+
+    .book {
+      position: absolute;
+      left: 16px;
+      width: 190px;
+      height: 125px;
+      padding: 24px;
+      border: 5px solid var(--white);
+      border-radius: 10px 18px 18px 10px;
+      background: #f3c3a8;
+      box-shadow: 0 14px 20px rgba(43, 76, 61, 0.12);
+    }
+
+    .book::after {
+      display: block;
+      width: 70%;
+      height: 7px;
+      margin-top: 15px;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: 0 17px 0 rgba(255, 255, 255, 0.55);
+      content: "";
+    }
+
+    .book:nth-child(1) {
+      top: 72px;
+      left: 30px;
+      background: #8270d5;
+    }
+
+    .book:nth-child(2) {
+      top: 36px;
+      left: 13px;
+      background: #f2be9d;
+    }
+
+    .book:nth-child(3) {
+      top: 0;
+      background: #fff9ed;
+    }
+
+    .about-copy .eyebrow {
+      margin-bottom: 17px;
+    }
+
+    .about-copy > p {
+      color: var(--muted);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 17px;
+      margin: 26px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 13px;
+      align-items: start;
+    }
+
+    .check {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--lavender);
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    .feature-list strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .feature-list .description {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Этапы */
+    .steps {
+      background: #f0edf9;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      padding: 26px;
+      border: 1px solid rgba(108, 85, 203, 0.12);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .step-number {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 20px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--purple);
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .step p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Стоимость и формат */
+    .pricing {
+      background: var(--white);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .price-card {
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .price-card.featured {
+      border-color: rgba(108, 85, 203, 0.35);
+      background: var(--lavender);
+    }
+
+    .price-badge {
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: 14px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--purple-dark);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .price-value {
+      margin: 6px 0 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .price-value small {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .price-card p {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .price-card .button {
+      margin-top: auto;
+      width: 100%;
+    }
+
+    /* Контакты */
+    .contact {
+      padding: 82px 0;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      padding: 44px;
+      border-radius: 32px;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .contact-copy .eyebrow {
+      color: #c7bafa;
+    }
+
+    .contact-copy h2 {
+      margin-top: 17px;
+    }
+
+    .contact-copy > p {
+      max-width: 410px;
+      color: #c9c7d4;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 15px;
+      margin-top: 26px;
+    }
+
+    .contact-details a {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .contact-details a:hover {
+      color: #c7bafa;
+    }
+
+    .contact-services {
+      margin-top: 18px;
+      color: #c9c7d4;
+      font-size: 14px;
+    }
+
+    .contact-form {
+      padding: 25px;
+      border-radius: 22px;
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 13px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      outline: none;
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .field textarea {
+      min-height: 86px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(108, 85, 203, 0.12);
+    }
+
+    .contact-form .button {
+      width: 100%;
+    }
+
+    .form-note,
+    .form-status {
+      margin: 11px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .form-status {
+      min-height: 18px;
+      color: var(--purple-dark);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* Подвал */
+    .footer {
+      padding: 24px 0 30px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        gap: 14px;
+        font-size: 13px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 20px;
+      }
+
+      .program-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-grid {
+        gap: 36px;
+      }
+
+      .contact-box {
+        gap: 30px;
+        padding: 34px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 32px, 520px);
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 68px;
+        right: 16px;
+        left: 16px;
+        display: none;
+        align-items: stretch;
+        padding: 17px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        padding: 7px 4px;
+      }
+
+      .nav > .button {
+        display: none;
+      }
+
+      .hero {
+        padding: 50px 0 58px;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 350px;
+        margin-top: 8px;
+      }
+
+      .art-circle {
+        width: 310px;
+      }
+
+      .portrait {
+        width: 230px;
+        height: 285px;
+      }
+
+      .floating-one {
+        top: 25px;
+        right: 0;
+      }
+
+      .floating-two {
+        bottom: 23px;
+        left: 0;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .section-intro {
+        margin-bottom: 29px;
+        font-size: 16px;
+      }
+
+      .program-grid,
+      .steps-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-card {
+        min-height: 225px;
+      }
+
+      .about-visual {
+        min-height: 300px;
+      }
+
+      .contact {
+        padding: 62px 0;
+      }
+
+      .contact-box {
+        gap: 27px;
+        padding: 25px 19px;
+        border-radius: 25px;
+      }
+
+      .contact-form {
+        padding: 19px 15px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="На главную">
+        <span class="brand-mark">М</span>
+        <span>
+          Мария Добромыслова
+          <small>репетитор по русскому языку</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navigation" aria-label="Основная навигация">
+        <a href="#programs">Занятия</a>
+        <a href="#about">Обо мне</a>
+        <a href="#steps">Как проходят занятия</a>
+        <a href="#pricing">Формат и цены</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+
+      <a class="button" href="#contact">Связаться</a>
+      <button class="menu-toggle" id="menuToggle" type="button"
+        aria-label="Открыть меню" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Онлайн и очно в Москве</span>
+          <h1>Помогаю учиться увереннее <span>без зубрёжки</span></h1>
+          <p class="hero-text">
+            Индивидуальные занятия по школьной программе: помогаю повысить
+            успеваемость, закрыть пробелы и подготовиться к ВПР, контрольным
+            и самостоятельным работам.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Записаться в Telegram <span aria-hidden="true">→</span></a>
+            <a class="button button-light" href="#pricing">Формат и стоимость</a>
+          </div>
+          <div class="hero-note">
+            <span class="note-check" aria-hidden="true">✓</span>
+            Опыт работы — 2 года. Индивидуальный план под темп ученика.
+          </div>
+        </div>
+
+        <div class="hero-art" role="img" aria-label="Иллюстрация преподавателя">
+          <div class="art-circle"></div>
+          <div class="portrait">
+            <div class="portrait-label">
+              Мария Добромыслова
+              <small>репетитор по русскому языку</small>
+            </div>
+          </div>
+          <div class="floating-card floating-one">
+            <span class="floating-icon" aria-hidden="true">✍</span>
+            Понятные объяснения
+          </div>
+          <div class="floating-card floating-two">
+            <span class="floating-icon" aria-hidden="true">📚</span>
+            Онлайн и очно в Москве
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section programs" id="programs">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Направления занятий</span>
+          <h2>Чем могу помочь</h2>
+          <p class="section-intro">
+            Разбираем школьные темы, повторяем материал с нуля и тренируемся выполнять
+            задания — с учётом уровня и цели ученика.
+          </p>
+        </div>
+
+        <div class="program-grid">
+          <article class="program-card">
+            <div class="program-icon" aria-hidden="true">✏️</div>
+            <h3>Повышение успеваемости</h3>
+            <p>Разбираем темы школьной программы, устраняем пробелы и работаем над тем, что вызывает трудности.</p>
+            <a class="card-link" href="#contact">Обсудить занятия →</a>
+          </article>
+
+          <article class="program-card">
+            <div class="program-icon" aria-hidden="true">🎯</div>
+            <h3>Подготовка к ВПР</h3>
+            <p>Повторяем необходимые правила и практикуемся на заданиях в формате проверочной работы.</p>
+            <a class="card-link" href="#contact">Обсудить занятия →</a>
+          </article>
+
+          <article class="program-card">
+            <div class="program-icon" aria-hidden="true">📝</div>
+            <h3>Контрольные и самостоятельные</h3>
+            <p>Закрепляем пройденный материал и спокойно готовимся к предстоящим школьным работам.</p>
+            <a class="card-link" href="#contact">Обсудить занятия →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual" aria-hidden="true">
+          <div class="book-stack">
+            <div class="book"></div>
+            <div class="book"></div>
+            <div class="book"></div>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">О репетиторе</span>
+          <h2>Бережный подход с опорой на нейропсихологию</h2>
+          <p>
+            Меня зовут Мария Добромыслова, я преподаю русский язык 2 года.
+            Я убеждена, что даже сложные правила становятся понятными, если объяснить
+            их логику простым языком и подобрать формат под особенности мышления ребёнка.
+          </p>
+
+          <ul class="feature-list">
+            <li>
+              <span class="check" aria-hidden="true">✓</span>
+              <span>
+                <strong>МГПУ: логопедия и основы нейропсихологии</strong>
+                <span class="description">Понимаю, как работают внимание, память и восприятие школьника — это помогает эффективно закрывать даже глубокие пробелы в знаниях.</span>
+              </span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true">✓</span>
+              <span>
+                <strong>86 баллов на ЕГЭ по русскому языку (выпуск 2024)</strong>
+                <span class="description">Хорошо знаю актуальные школьные требования и умею разложить любую тему на понятные шаги.</span>
+              </span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true">✓</span>
+              <span>
+                <strong>Медицинское образование (колледж, 2026)</strong>
+                <span class="description">Внимательно отношусь к утомляемости ребёнка, чередую теорию, наглядные схемы и практику без перегрузки.</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps" id="steps">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Начать просто</span>
+          <h2>Как проходят занятия</h2>
+          <p class="section-intro">
+            Сначала обсуждаем запрос, затем выбираем темы и занимаемся по
+            индивидуальному плану онлайн или очно в Москве.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step">
+            <div class="step-number">1</div>
+            <h3>Обсуждаем задачу</h3>
+            <p>Вы рассказываете, какой класс, какие темы вызывают трудности и к чему нужно подготовиться.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">2</div>
+            <h3>Выбираем план</h3>
+            <p>Определяем приоритетные темы и удобный формат работы: онлайн или очно в Москве.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">3</div>
+            <h3>Разбираем и закрепляем</h3>
+            <p>Объясняем правила по схемам, выполняем упражнения и регулярно закрепляем пройденное.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Формат и стоимость</span>
+          <h2>Варианты занятий</h2>
+          <p class="section-intro">
+            Провожу занятия онлайн и очно в Москве. Выберите удобную длительность
+            в зависимости от задач ученика.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="price-badge">Старт работы</span>
+            <h3>Знакомство и диагностика</h3>
+            <div class="price-value">По запросу <small>/ первый урок</small></div>
+            <p>Определим текущий уровень, найдём пробелы в темах и составим индивидуальный маршрут занятий.</p>
+            <a class="button button-light" href="#contact">Обсудить в Telegram</a>
+          </article>
+
+          <article class="price-card featured">
+            <span class="price-badge">Оптимально для программы</span>
+            <h3>Стандартное занятие</h3>
+            <div class="price-value">1 000 ₽ <small>/ 45 минут</small></div>
+            <p>Подходит для регулярной помощи по школьной программе, разбора домашних заданий и подготовки к ВПР.</p>
+            <a class="button" href="#contact">Записаться на 45 мин</a>
+          </article>
+
+          <article class="price-card">
+            <span class="price-badge">Глубокая проработка</span>
+            <h3>Расширенное занятие</h3>
+            <div class="price-value">2 000 ₽ <small>/ 90 минут</small></div>
+            <p>Для основательного разбора сложных тем с большой практикой, диктантами и закреплением материала.</p>
+            <a class="button button-light" href="#contact">Записаться на 90 мин</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-box">
+        <div class="contact-copy">
+          <span class="eyebrow">Связаться со мной</span>
+          <h2>Расскажите, какая помощь нужна</h2>
+          <p>
+            Заполните короткую форму — заявка сразу откроется в Telegram
+            (@mashulikk_d), или напишите мне напрямую любым удобным способом.
+          </p>
+
+          <div class="contact-details">
+            <a href="https://t.me/mashulikk_d" target="_blank" rel="noopener noreferrer">
+              ✈ Telegram: @mashulikk_d ↗
+            </a>
+            <a href="https://wa.me/79011897351" target="_blank" rel="noopener noreferrer">
+              💬 WhatsApp: написать в чат ↗
+            </a>
+            <a href="tel:+79011897351">☎ +7 901 189-73-51</a>
+            <a href="mailto:dobromyslova06@bk.ru">✉ dobromyslova06@bk.ru</a>
+          </div>
+
+          <p class="contact-services">
+            Занятия проводятся онлайн и очно в Москве. Также доступна связь в MAX и VK по указанному номеру.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Ваше имя</label>
+              <input id="name" name="name" type="text" placeholder="Например, Ольга" required>
+            </div>
+            <div class="field">
+              <label for="contactInfo">Телефон или ник в Telegram</label>
+              <input id="contactInfo" name="contactInfo" type="text"
+                placeholder="+7 или @username" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="format">Формат и длительность</label>
+              <select id="format" name="format">
+                <option>Онлайн — 45 минут (1 000 ₽)</option>
+                <option>Онлайн — 90 минут (2 000 ₽)</option>
+                <option>Очно в Москве — 45 минут (1 000 ₽)</option>
+                <option>Очно в Москве — 90 минут (2 000 ₽)</option>
+                <option>Пока не определились</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="goal">Цель занятий</label>
+              <select id="goal" name="goal">
+                <option>Повышение успеваемости</option>
+                <option>Закрыть пробелы с нуля</option>
+                <option>Подготовка к ВПР</option>
+                <option>Контрольные и самостоятельные</option>
+                <option>Другое</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Комментарий</label>
+            <textarea id="message" name="message"
+              placeholder="Например: 6 класс, сложная тема или удобные дни для занятий"></textarea>
+          </div>
+
+          <button class="button" type="submit">
+            Отправить заявку в Telegram <span aria-hidden="true">→</span>
+          </button>
+          <p class="form-note">
+            Откроется диалог с @mashulikk_d в Telegram с уже готовым текстом заявки.
+          </p>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Мария Добромыслова · Репетитор по русскому языку (Москва и онлайн)</span>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const TELEGRAM_USERNAME = "mashulikk_d";
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navigation = document.getElementById("navigation");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Открыть меню");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const text = encodeURIComponent(
+        `Здравствуйте, Мария! Хочу записаться на занятия по русскому языку.
+` +
+        `• Имя: ${data.get("name")}
+` +
+        `• Контакт: ${data.get("contactInfo")}
+` +
+        `• Формат: ${data.get("format")}
+` +
+        `• Цель: ${data.get("goal")}
+` +
+        `• Комментарий: ${data.get("message") || "без комментария"}`
+      );
+
+      document.getElementById("formStatus").textContent =
+        "Открываем Telegram (@" + TELEGRAM_USERNAME + ") с готовым текстом заявки...";
+
+      window.open(`https://t.me/${TELEGRAM_USERNAME}?text=${text}`, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
